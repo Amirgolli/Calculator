@@ -1,0 +1,77 @@
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+.main-box{
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(241, 242, 243, 1);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.culmn{
+    display: flex;
+    gap: 16px;
+}
+
+.btn{
+    width: 73px;
+    height: 72px;
+    border-radius: 48px;
+    border: none;
+    cursor: pointer;
+    font-size: 27px;
+    font-weight: 300;
+}
+.screen{
+    height: 151px;
+}
+
+
+#setting{
+    background-color: rgba(210, 211, 218, 1);
+    transition: all ease .35s;
+}
+#setting:hover{
+    background-color: rgb(153, 153, 153);
+}
+
+
+#symbol{
+    background-color: rgba(64, 229, 190, 1);
+    color: white;
+    transition: all ease .35s;
+}
+#symbol:hover{
+    background-color: rgb(71, 195, 166);
+}
+
+
+#number{
+    background-color: white;
+    transition: all ease .35s;
+}
+#number:hover{
+    background-color: rgb(225, 224, 224);
+}
+
+#equal{
+    background-color: black;
+    color: white;
+    transition: all ease .35s;
+}
+#equal:hover{
+    background-color: rgb(58, 58, 58);
+}
+
+@media  screen and (max-width:800px) and (min-width:450px) {
+
+    .btn{
+        width: 107px;
+    }
+
+}
