@@ -7,6 +7,12 @@ function clearAll(){
     screenCalculator.value='';
 }
 
+function clearLast(){
+    if(screenCalculator.value.length>0){
+        screenCalculator.value=screenCalculator.value.slice(0,-1);
+    }
+}
+
 function calculate(){
     try{
         screenCalculator.value=eval(screenCalculator.value);
