@@ -1,8 +1,10 @@
 body{
     font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    
 }
 .main-box{
-    width: fit-content;
     height: fit-content;
     background-color: rgba(241, 242, 243, 1);
     margin: 0 auto;
@@ -29,6 +31,8 @@ body{
 }
 .screen{
     height: 151px;
+    border: none;
+    font-size: 50px;
 }
 
 
@@ -68,7 +72,7 @@ body{
     background-color: rgb(58, 58, 58);
 }
 
-@media  screen and (max-width:800px) and (min-width:450px) {
+@media  screen and (max-width:800px) and (min-width:400px) {
 
     .btn{
         width: 107px;
