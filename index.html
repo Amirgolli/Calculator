@@ -8,8 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <img id="historyIcon" onclick="history()" src="history.png" alt="hostory_icon">
     <div class="main-box">
-        <input class="screen" readonly></input>
+        <div class="">
+            <input class="screen" readonly></input>
+        </div>
         <div class="culmn">
             <button onclick="clearAll()" id="setting" class="btn">C</button>
             <button onclick="addChar('+/-')" id="setting" class="btn">+/-</button>
@@ -41,6 +44,13 @@
             <button onclick="calculate('=')" id="equal" class="btn">=</button>
         </div>
     </div>
+
+    <div id="historyContainer" style="display: none;">
+        <img id="close" src="close.png" alt="">
+        <h2>history</h2>
+        <div id="historyList"></div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
