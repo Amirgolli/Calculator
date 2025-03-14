@@ -56,29 +56,34 @@ function backPage(){
 
 
 
-function history(){
-    const data = {
-        "text": screenCalculator.value 
-    };
-    
-    fetch('https://pm2-tenacious-feynman.circumeo-apps.net/history', {
-        method: 'POST', 
+function history() {
+    const data = { "text": screenCalculator.value };
+
+    fetch('https://pm2-tenacious-feynman.circumeo-apps.net/', {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data) 
+        body: JSON.stringify(data)
     })
     .then(response => response.json())
     .then(data => {
-        historyList.innerHTML = ''; 
-        data.forEach(item => {
+        console.log("🚀 server:", data);
+
+
+        if (data.success) {
             const p = document.createElement('p');
-            p.textContent = item; 
+            p.textContent = `result: ${data.success}`;
             historyList.appendChild(p);
-        });
+        } else {
+            historyList.innerHTML = '<p>format is false</p>';
+        }
     })
     .catch(error => {
-        historyList.innerHTML = '<p>خطا</p>';
+        console.error("❌ error for gat data:", error);
+        historyList.innerHTML = '<p>errot for gat data</p>';
     });
-};
-    
+}
+
+
+
     
 
