@@ -18,10 +18,13 @@ function clearLast(){
         screenCalculator.value=screenCalculator.value.slice(0,-1);
     }
 }
+let res;
 
 function calculate(){
     try{
-        screenCalculator.value=eval(screenCalculator.value);
+        const test=eval(screenCalculator.value);
+        res=screenCalculator.value +'='+ test;
+        screenCalculator.value=test;
     }
     catch(error){
         screenCalculator.value ="Error,please clear";
@@ -29,6 +32,8 @@ function calculate(){
         
     }
 }
+
+
 
 icon.addEventListener('click',togglePage);
 closeIcon.addEventListener('click',backPage);
@@ -57,7 +62,8 @@ function backPage(){
 
 
 function history() {
-    const data = { "text": screenCalculator.value };
+
+    const data = { "text": res };
 
     fetch('https://pm2-tenacious-feynman.circumeo-apps.net/', {
         method: 'POST',
@@ -66,7 +72,7 @@ function history() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log("🚀 server:", data);
+        console.log(" server:", data);
 
 
         if (data.success) {
@@ -78,7 +84,7 @@ function history() {
         }
     })
     .catch(error => {
-        console.error("❌ error for gat data:", error);
+        console.error(" error for gat data:", error);
         historyList.innerHTML = '<p>errot for gat data</p>';
     });
 }
