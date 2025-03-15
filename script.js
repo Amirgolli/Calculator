@@ -66,7 +66,7 @@ function history() {
 
     const data = { "text": res };
 
-    fetch('https://pm2-tenacious-feynman.circumeo-apps.net/', {
+    fetch('https://calculator-back.liara.run/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
