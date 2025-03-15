@@ -25,6 +25,7 @@ function calculate(){
         const test=eval(screenCalculator.value);
         res=screenCalculator.value +'='+ test;
         screenCalculator.value=test;
+        history();
     }
     catch(error){
         screenCalculator.value ="Error,please clear";
@@ -42,10 +43,10 @@ closeIcon.addEventListener('click',backPage);
 
 function togglePage(){
     if(historyContainer.style.display=='none'){
-        
+        screenCalculator.value='';
         historyContainer.style.display ='block';
         btn.forEach(button => button.style.display = 'none');
-        history();
+  
         
     }else{
         historyContainer.style.display ='none';
@@ -77,19 +78,14 @@ function history() {
 
         if (data.success) {
             const p = document.createElement('p');
-            p.textContent = `result: ${data.success}`;
-            historyList.appendChild(p);
+            p.textContent = data.success;
+            historyContainer.appendChild(p);
         } else {
-            historyList.innerHTML = '<p>format is false</p>';
+            historyList.innerHTML = '<p>you do not have any history</p>';
         }
     })
     .catch(error => {
         console.error(" error for gat data:", error);
-        historyList.innerHTML = '<p>errot for gat data</p>';
+        historyList.innerHTML = '<p>error for gat data</p>';
     });
 }
-
-
-
-    
-
